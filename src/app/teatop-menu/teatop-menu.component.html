@@ -4,7 +4,7 @@
     <!-- Items Selection Menu -->
     <div class="menu__selection">
       <!-- NgFor here -->
-      <h2 class="header-font header-font--orange">Menu</h2>
+      <h2 class="header-font header-font--orange">Drinks</h2>
       <ng-container *ngFor="let item of products; let idx = index">
         <div [ngStyle]="item.selected && selectedStyle" class="item" (click)="selectProduct(idx)">
           <figure [ngStyle]="{'background-image':'url('+ uploadsDir + item.image.url +')'}" class="item__picture"></figure>
