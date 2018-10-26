@@ -1,20 +1,54 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<header class="header">
+  <app-teatop-navbar class="header__navbar"></app-teatop-navbar>
+  <figure class="header__logo">
+    <img src="../assets/images/logo.png" alt="Tea Top Logo">
+  </figure>
 
+  <div class="header__title-container">
+    <div class="header__title-images">
+      <figure class="header__title-images--2"></figure>
+      <figure class="header__title-images--3"></figure>
+      <figure class="header__title-images--4"></figure>
+    </div>
+    <h2 class="header__title">Top Tea <br/> From Taiwan.</h2>
+  </div>
+  <div *ngIf="!isUnderRes" class="header__image-container">
+    <div class="header__image-blob"></div>
+  </div>
+</header>
+
+<main class="body">
+  <div class="body__image-container">
+    <figure class="body__image"></figure>
+  </div>
+  <div class="body__content-container">
+    <h2 class="header-font header-font--black">About us</h2>
+    <p class="body__image-desc">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, optio minus alias aut consectetur iste quia rerum. Sapiente quidem, maxime pariatur ipsa eum, atque, saepe aut sequi ad quod quaerat.
+      <br/><br/>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, optio minus alias aut consectetur iste quia rerum. Sapiente quidem, maxime pariatur ipsa eum, atque, saepe aut sequi ad quod quaerat.
+    </p>
+    <button class="btn btn--black">See menu</button>
+  </div>
+</main>
+
+<app-teatop-menu class="menu"></app-teatop-menu>
+
+<app-teatop-location class="location"></app-teatop-location>
+
+<footer class="footer">
+  <p class="footer__copyright">&copy; 2018 Tea Top USA</p>
+  <svg class="footer__icon">
+      <use xlink:href="../assets/images/sprites.svg#icon-facebook2"></use>
+  </svg>
+  <svg class="footer__icon">
+      <use xlink:href="../assets/images/sprites.svg#icon-twitter"></use>
+  </svg>
+  <svg class="footer__icon">
+      <use xlink:href="../assets/images/sprites.svg#icon-instagram"></use>
+  </svg>
+  <svg class="footer__icon">
+      <use xlink:href="../assets/images/sprites.svg#icon-mail"></use>
+  </svg>
+</footer>
+  

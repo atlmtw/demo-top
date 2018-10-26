@@ -1,0 +1,22 @@
+<nav class="navbar">
+  <ul *ngIf="!isUnderRes;else sidenav" class="navbar__nav-list">
+    <a class="navbar__nav-link" href="#">
+      <li>About us</li>
+    </a>
+    <a class="navbar__nav-link" href="#">
+      <li>Menu</li>
+    </a>
+    <a class="navbar__nav-link" href="#">
+      <li>Events</li>
+    </a>
+    <a class="navbar__nav-link" href="#">
+      <li>Locations</li>
+    </a>
+  </ul>
+
+  <ng-template #sidenav>
+    <div class="navbar__icon-button">
+      <div class="navbar__icon"></div>
+    </div>
+  </ng-template>
+</nav>

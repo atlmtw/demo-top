@@ -1,0 +1,29 @@
+.btn {
+    padding: 1rem 3rem;
+    width: 15rem;
+    height: 4rem;
+    border-radius: 4px;
+    font-family: $primary-2-font;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    cursor:pointer;
+    transition: all .5s;
+
+    &--black {
+        background-color: $color-primary;
+        border: 3px solid $color-text-regular;
+        color: $color-text-regular;
+    }
+
+    &--black:hover,
+    &--black:active {
+        outline: none;
+        border: 3px solid #fff;
+        background-color: #fff;
+        color: $color-primary;
+    }
+
+    &--black:focus {
+        outline: none;
+    }
+}

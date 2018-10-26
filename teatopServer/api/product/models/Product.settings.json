@@ -1,0 +1,47 @@
+{
+  "connection": "default",
+  "collectionName": "product",
+  "info": {
+    "name": "product",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "default": "",
+      "type": "decimal",
+      "required": true
+    },
+    "type": {
+      "default": "",
+      "type": "enumeration",
+      "enum": [
+        "popular",
+        " tea",
+        " milk tea",
+        " special mix",
+        " slushy",
+        " milk foam",
+        " fresh milk",
+        " matcha"
+      ]
+    },
+    "description": {
+      "default": "",
+      "type": "text"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

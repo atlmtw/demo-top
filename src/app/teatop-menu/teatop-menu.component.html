@@ -1,0 +1,30 @@
+<section class="menu">
+  <div class="menu__split">
+    
+    <!-- Items Selection Menu -->
+    <div class="menu__selection">
+      <!-- NgFor here -->
+      <h2 class="header-font header-font--orange">Menu</h2>
+      <ng-container *ngFor="let item of products; let idx = index">
+        <div [ngStyle]="item.selected && selectedStyle" class="item" (click)="selectProduct(idx)">
+          <figure [ngStyle]="{'background-image':'url('+ uploadsDir + item.image.url +')'}" class="item__picture"></figure>
+          <!-- <h4 class="item__title">{{item.name}}</h4> -->
+        </div>
+      </ng-container>
+    </div>
+
+    <!-- Selected item stats -->
+    <div *ngIf="selectedProduct" class="menu__selected-item">
+      <div class="menu__item-card" [@selectChangeTrigger]="triggerBool ? 'normal' : 'changed' ">
+        <figure [ngStyle]="{'background-image': 'url('+ uploadsDir + selectedProduct?.image?.url +')'}"  class="menu__item-picture"></figure>
+        <h3 class="menu__item-title">
+          {{selectedProduct.name}}
+          <span class="menu__item-type">{{selectedProduct.type}}</span>
+        </h3>
+        <p class="menu__item-price"><strong>Price:</strong> {{selectedProduct.price | currency}}</p>
+        <p class="menu__item-desc">{{selectedProduct.description}}</p>
+      </div>
+    </div>
+
+  </div>
+</section>
