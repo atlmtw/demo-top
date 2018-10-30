@@ -7,13 +7,32 @@
     align-items: center;
     padding: 1rem;
     min-height: 5rem;
-    height: 6rem;
     position: relative;
-    justify-content: flex-end;
-    padding-right: 5rem;
+    padding: 2rem 5rem;
 
-    @include respond(phone){
-        padding-right: 2rem;
+    &__logo {
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        color: $color-accent;
+        font-family: 'Arial', sans-serif;
+        font-size: 3rem;
+        letter-spacing: 3px;
+        font-weight: 700;
+        grid-column: 1 / span 1;
+        margin-right: auto;
+    }
+
+    &__svg {
+        height: 3rem;
+        width: 3rem;
+        margin:0 2px .5rem 2px;
+        transform: rotateZ(25deg);
+        stroke: currentColor;
+
+        path {
+            fill: currentColor;
+        }
     }
 
     &__nav-list {
@@ -56,7 +75,8 @@
 
     &__nav-link:hover {
         li {
-            color: $color-text-regular;
+            letter-spacing: 3px;
+            color: $color-accent;
         }
     }
 

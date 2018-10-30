@@ -1,40 +1,34 @@
 <header class="header">
-  <app-teatop-navbar class="header__navbar"></app-teatop-navbar>
-  <figure class="header__logo">
-    <img src="../assets/images/logo.png" alt="Tea Top Logo">
-  </figure>
-
-  <div class="header__title-container">
-    <div class="header__title-images">
-      <figure class="header__title-images--2"></figure>
-      <figure class="header__title-images--3"></figure>
-      <figure class="header__title-images--4"></figure>
-    </div>
-    <h2 class="header__title">Top Tea <br/> From Taiwan.</h2>
+  <app-teatop-navbar class="header__navbar u-margin-bottom-sm"></app-teatop-navbar>
+  <div class="header__video-container">
+    <video class="header__video" autoplay muted loop>
+        <source src="src/assets/images/cafe-video.mp4" type="video/mp4">
+        Your browser is not supported!
+    </video>
   </div>
-  <div *ngIf="!isUnderRes" class="header__image-container">
-    <div class="header__image-blob"></div>
+  <div class="header__title-container">
+    <h2 class="header__title">TOP TEA</h2> 
+    <h2 class="header__title">FROM TAIWAN</h2>
   </div>
 </header>
 
 <main class="body">
-  <div class="body__image-container">
-    <figure class="body__image"></figure>
+  <div class="story">
+    <div class="story__text">
+      <h3 class="story__title header-font header-font--orange u-margin-bottom-sm">Our Story</h3>
+      <p class="story__paragraph p-font u-margin-bottom-sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo perferendis soluta laudantium architecto molestias provident ipsa neque quo optio, obcaecati labore, dolore aliquid officiis distinctio aliquam reiciendis nesciunt reprehenderit error.</p>
+      <button class="btn btn--accent">
+        <span>Learn more</span>
+        <span>&rarr;</span>
+      </button>
+    </div>
   </div>
-  <div class="body__content-container">
-    <h2 class="header-font header-font--black">About us</h2>
-    <p class="body__image-desc">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, optio minus alias aut consectetur iste quia rerum. Sapiente quidem, maxime pariatur ipsa eum, atque, saepe aut sequi ad quod quaerat.
-      <br/><br/>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, optio minus alias aut consectetur iste quia rerum. Sapiente quidem, maxime pariatur ipsa eum, atque, saepe aut sequi ad quod quaerat.
-    </p>
-    <button class="btn btn--black">See menu</button>
+  <div class="body__image-wrapper">
+    <div class="body__image"></div>
   </div>
 </main>
 
 <app-teatop-menu class="menu"></app-teatop-menu>
-
-<app-teatop-location class="location"></app-teatop-location>
 
 <footer class="footer">
   <p class="footer__copyright">&copy; 2018 Tea Top USA</p>

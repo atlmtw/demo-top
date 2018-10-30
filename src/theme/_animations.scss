@@ -2,3 +2,15 @@
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
+
+@keyframes rotateGently {
+    0% { transform: rotate(-15deg) translateY(1rem) }
+    50% { transform: rotate(0) translateY(0) }
+    100% { transform: rotate(15deg) translateY(-1rem) }
+}
+
+@keyframes rotateOppositeGently {
+    0% { transform: rotate(15deg) translateY(-1rem) }
+    50% { transform: rotate(0) translateY(0) }
+    100% { transform: rotate(-15deg) translateY(1rem) }
+}

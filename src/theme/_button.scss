@@ -1,13 +1,30 @@
+@import '../theme/variables';
+
 .btn {
     padding: 1rem 3rem;
-    width: 15rem;
+    width: 17rem;
     height: 4rem;
     border-radius: 4px;
     font-family: $primary-2-font;
     font-size: 1.4rem;
     text-transform: uppercase;
     cursor:pointer;
+    font-weight: 700;
     transition: all .5s;
+
+    &--accent {
+        display: flex;
+        justify-content: space-between;
+        background-color: $color-accent;
+        color: #fff;
+        border: none;
+        transition: all .3s;
+    }
+
+    &--accent:hover {
+        letter-spacing: 1px;
+        width: 18rem;
+    }
 
     &--black {
         background-color: $color-primary;

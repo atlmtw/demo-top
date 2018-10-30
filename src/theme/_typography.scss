@@ -1,5 +1,5 @@
-@import './variables';
-@import './mixins';
+@import '../theme/variables';
+@import '../theme/mixins';
 
 @font-face {
     font-family: "Signika";
@@ -32,7 +32,21 @@
         color: $color-primary;
     }
 
+    &--yellowish {
+        color: $color-yellowish;
+    }
+
+    &--accent {
+        color: $color-accent;
+    }
+
     &--white {
         color: #fff;
     }
+}
+
+.p-font {
+    font-size: 2rem;
+    color: $color-text-regular;
+    font-family: $secondary-font;
 }

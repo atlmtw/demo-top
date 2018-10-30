@@ -10,31 +10,15 @@
     grid-template-rows: min-content;
     overflow: hidden;
     position: relative;
-    height: 90vh;
+    min-height: 100vh;
 
-    @include respond(phone) {
-        height: auto;
-        grid-template-rows: repeat(2, min-content);
+    @include respond(tab-land){
+        min-height: 0px;
+        margin-bottom: 10rem;
     }
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        transform: scale(1.05);
-        -webkit-filter: blur(7px);
-        filter: blur(7px);
-        background-attachment: fixed;
-        background-size: cover;
-        background-image: 
-            linear-gradient(
-                rgba(#fff, .75),
-                rgba(#fff, .75)
-            ),
-            url(../assets/images/tea-background.jpg);
+    @include respond(tab-port) {
+        overflow:visible;
     }
 
     &__navbar {
@@ -43,219 +27,161 @@
         grid-column: 1 / -1;
     }
 
-    &__logo {   
-        top: .5rem;
-        left: 1.5rem;
-        position: absolute;
-        z-index: 10;
-        opacity: 0;
-        animation: appearSmooth 1s forwards;
-        -webkit-animation-timing-function: ease-out;
-        animation-timing-function: ease-out;
-    
-        @include respond(tab-port) {
-            left: 2rem;
-        }
+    &__video-container { 
+        position: relative; 
+        height: 40vw;
+        width: 80vw;
+        grid-column: 1 / -1;
+        overflow: hidden;
+        transform: translateX(7rem) skewX(-7deg);
+        background-color: #fff;
 
-        @include respond(tab-port) {
-            left: 1rem;
-        }
-    
-        img {
-            height: 15rem;
-            display: block;
-    
-            @include respond(tab-port) {
-                height: 10rem;
-            }
+        border-bottom-left-radius: 100px;
+        border-top-right-radius: 100px;
 
-            @include respond(phone) {
-                height: 7rem;
-            }
+        @include respond(phone){
+            height: 70vw;
+            width: 85vw;
+            transform: translateX(0) skewX(-7deg);
+            justify-self: center;
         }
+    };
+
+    &__video {
+        opacity: .7;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        transform: scale(1.05) skewX(7deg);
     }
 
     &__title-container {
-        grid-column: col-start 1 / col-end 6;
-    
         display: grid;
-        align-items: start;
-        align-content: center; 
-        padding-left: 5rem;
-    
-        @include respond(tab-port) {
-            grid-column: col-start 1 / col-end 5;
+        grid-template-rows: repeat(2,1fr);
+        position: absolute;
+        bottom: 15rem;
+        right: 10rem;
+        z-index: 15;
+        padding: 2rem 4rem 3rem 4rem;
+        background-color: rgba($color-accent,.9);
+
+        border-top-right-radius: 100px;
+        border-bottom-left-radius: 100px;
+        transform: translateX(7rem) skewX(-7deg);
+
+        @include respond(tab-land){
+            bottom: 5rem;
         }
 
-        @include respond(phone) {
-            grid-column: 1 / -1;
-            align-content: start;
-            padding: 3rem;
-        }
-    }
-
-    &__title-images{
-        grid-column: 1 / -1;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-column-gap: 2.5rem;
-
-        @include respond(phone){
-            margin-bottom: 2rem;
-        }
-    
-        &--2,&--3,&--4 {
-            @include circleGraphic;
-            @include fadeInOut;
-            border: 1rem solid $color-primary;
-        }
-    
-        &--2 {
-            grid-column: 1;
-            width: 12rem;
-            height: 12rem;
-            justify-self: end;
-            background-image: url('../assets/images/tea-4.jpg');
-            
-            @include respond(phone) {
-                width: 9rem;
-                height: 9rem;
-            }
-    
-            animation-delay: .5s;
-        }
-    
-        &--3 {
-            grid-column: 2;
-            justify-self: center;
-            width: 16rem;
-            height: 16rem;
-            background-image: url('../assets/images/teatop-wood.jpg');
-    
-            animation-delay: .7s;
-
-            @include respond(phone) {
-                width: 13rem;
-                height: 13rem;
-            }
-        }
-    
-        &--4 {
-            grid-column: 3;
-            width: 20rem;
-            height: 20rem;
-            background-image: url('../assets/images/tea-3.jpg');
-    
-            animation-delay: .9s;
-
-            @include respond(phone) {
-                width: 11rem;
-                height: 11rem;
-            }
+        @include respond(tab-port){
+            bottom: -5rem;
         }
     }
 
     &__title {
-        font-family: $primary-3-font;
+        font-family: 'Arial', open-sans;
         font-weight: 700;
-        font-size: 11rem;
+        font-size: 7rem;
+        display: block;
+        letter-spacing: 5px;
+        line-height: .9;
         text-transform: uppercase;
-        color: $color-primary;
-        transition: all .5s;
-    
-        @include fadeInOut;
-        -webkit-animation-delay: 1s;
-        animation-delay: 1s;
+        color: #fff;
 
-        @include respond(phone) {
-            font-size: 8rem;
-        }
-    }
-    
-    &__image-container {
-        padding-right: 5rem;
-        position: relative;
-        grid-column: col-start 7 / -1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        @include respond(tab-port) {
-            grid-column: col-start 6 / -1;
-        }
-    }
-    
-    &__image-blob {
-        z-index: 1;
-        position: relative;
-        background-image: url(../assets/images/tea-1.jpg);
-        height: 30vw;
-        width: 30vw;
-        @include circleGraphic;
-        @include fadeInOut;
+        transform: skewX(7deg);
+
         @include respond(tab-port){
-            margin-top: 14rem;
-            margin-left: 10rem;
-            height: 25vw;
-            width: 25vw;
+            font-size: 5.5rem;
         }
-        animation-delay: 1.1s;
-        border-radius: 50%;
-        border: 1.5rem solid $color-primary;
-    }    
+
+        @include respond(phone){
+            font-size: 3rem;
+            line-height: 1.1;
+        }
+    }
     
 }
 
 .body {
-    background-color: $color-primary;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    height: 50vw;
+    display: flex;
+    flex-direction: column;
+    min-height: 95vh;
+    background-color: #fff;
+    padding: 4rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 
-    @include respond(tab-port){
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(2, 1fr);
-        height: auto;
+    .story {
+        display: flex;
+        align-items: center;
+        padding: 3rem;
+        height: 30rem;
+        width: 60%;
+        position: relative;
+        z-index: 3;
+        background-color: #fff;
+
+        border-top-right-radius: 100px;
+        border-bottom-left-radius: 100px;
+        transform: translateX(7rem) skewX(-7deg);
+
+        &__text {
+            transform: skewX(7deg);
+
+            @include respond(phone) {
+                transform: skewX(0);
+            }
+        }
+
+        button > span {
+            transform: skewX(0);
+        }
+
+        @include respond(tab-port) {
+            width: 85%;
+            height: 40rem;
+            transform: translateX(0) skewX(-7deg);
+        }
+
+        @include respond(phone) {
+            width: 100%;
+            margin-top: 20rem;
+            border-radius: 12px;
+            border-top-right-radius: 12px;
+            border-bottom-left-radius: 12px;
+            transform: translateX(0) skewX(0);
+        }
     }
 
-    &__image-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    &__image-wrapper {
+        display: block;
+        position: absolute;
+        overflow: hidden;
+        z-index: 1;
+        height: 35rem;
+        width: 60rem;
+        bottom: 30rem;
+        right: 10%;
 
-        @include respond(tab-port){
-            padding: 3rem 3rem 1rem 3rem;
-        }
+        border-top-right-radius: 100px;
+        border-bottom-left-radius: 100px;
+        transform: translateX(7rem) skewX(-7deg);
     }
 
     &__image {
-        @include fadeInOut;
-        @include circleGraphic;
-        border: 1.5rem solid $color-text-regular;
-        -webkit-animation-delay: 1s;
-        animation-delay: 1s;
-        background-image: url(../assets/images/tea-6.jpg);
-        height: 35vw;
-        width: 35vw;
-    }
+        width: 100%;
+        height: 100%;
+        background-image: 
+            linear-gradient(
+                rgba(#fff, .8),
+                rgba(#fff, .8)
+            ),
+            url('../assets/images/tea-owners.jpg');
+        background-size: cover;
+        background-position: 50% 50%;
 
-    &__content-container {
-        padding: 5rem;
-        display: grid;
-        grid-row-gap: 2rem;
-        align-content: center;
-        grid-template-rows: repeat(2, max-content) min-content;
-
-        @include respond(tab-port){
-            padding: 1rem 3rem 3rem 3rem;
-            justify-items: center;
-        }
-    }
-
-    &__image-desc {
-        font-size: 1.6rem;
-        font-weight: 400;
-        font-family: $primary-2-font;
-        color: $color-text-regular;
+        transform: scale(1.05) skewX(7deg);
     }
 }
 
@@ -263,17 +189,16 @@
     display: grid;
     grid-template-columns: 3fr repeat(4, min-content);
     grid-column-gap: 2rem;
-    height: 12.5rem;
+    height: 6rem;
     width: 100%;
-    background-color: $color-text-regular;
+    background-color: $color-accent;
     align-content: center;
-    padding: 2rem 5rem;
+    padding: 2rem 3rem;
 
     &__copyright {
         color: #fff;
         font-family: $primary-2-font;
         font-size: 1.6rem;
-        font-style: italic;
     }
 
     &__icon {

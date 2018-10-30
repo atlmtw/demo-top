@@ -20,21 +20,21 @@ import {
     trigger('selectChangeTrigger', [
       state('normal', style({})),
       state('changed', style({})),
-      transition('normal <=> changed', [
-        animate('.3s', keyframes([
-          style({ 
-            transform: 'scale(1)', 
-            offset: 0}),
-          style({ 
-            transform: 'scale(1.01)', 
-            boxShadow: '0 1rem 1.5rem rgba(0,0,0,.2)',
-            offset: 0.5}),
-          style({ 
-            transform: 'scale(1)', 
-            offset: 1.0
-          }),
-        ])),
-      ]),
+      // transition('normal <=> changed', [
+      //   animate('.3s', keyframes([
+      //     style({ 
+      //       transform: 'scale(1)', 
+      //       offset: 0}),
+      //     style({ 
+      //       transform: 'scale(1.01)', 
+      //       boxShadow: '0 1rem 1.5rem rgba(0,0,0,.2)',
+      //       offset: 0.5}),
+      //     style({ 
+      //       transform: 'scale(1)', 
+      //       offset: 1.0
+      //     }),
+      //   ])),
+      // ]),
     ]),
   ]
 })
